@@ -1,11 +1,15 @@
 // ==UserScript==
-// @name        Fix Twitter Layout
-// @namespace   fearthecowboy
-// @description fix twitter layout. Move the post box back to left side. Put titlebar inside timeline.
+// @name         Twitter Layout Fixes
+// @namespace    http://FearTheCowboy.com/
+// @version      2.1
+// @description  Fixes some crappy things about twitter
+// @author       FearTheCowboy [Garrett Serack]
 // @include     https://twitter.com/
 // @include     https://twitter.com/search
-// @version     2
+// @grant        none
 // ==/UserScript==
+/* jshint -W097 */
+'use strict';
 
 document.styleSheets[document.styleSheets.length-1].insertRule('.content-main { float: left; !important }', 0);
 
