@@ -5,6 +5,7 @@
 // @description  Fixes some crappy things about twitter
 // @author       FearTheCowboy [Garrett Serack]
 // @include     https://twitter.com/
+// @include     https://twitter.com/i/notifications
 // @include     https://twitter.com/search
 // @grant        none
 // ==/UserScript==
@@ -12,6 +13,10 @@
 'use strict';
 
 document.styleSheets[document.styleSheets.length-1].insertRule('.content-main { float: left; !important }', 0);
+
+var elmDeleted = document.getElementsByClassName("dashboard")[0];
+	elmDeleted.parentNode.removeChild(elmDeleted);
+
 
 function embed()
 {
@@ -24,7 +29,6 @@ function embed()
             $(".content-header").removeClass("visuallyhidden");
             $(".timeline-tweet-box").appendTo(".DashboardProfileCard-content");
             $(".top-timeline-tweet-box-user-image").hide();
-            
         });
     }
     else
